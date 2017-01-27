@@ -23,6 +23,8 @@ int iswin()
 }
 
 int think_max(int &x, int &y);
+int think_max(int &x, int &y);
+
 int think_min(int &x, int &y)
 {
 	if (iswin())
