@@ -58,7 +58,7 @@ int think_min(int &x, int &y)
 				}
 				else
 				{
-					v = -think_max(x, y);
+					v = think_max(x, y);
 					if (best < v)
 					{
 						x = i, y = j;
