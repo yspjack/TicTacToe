@@ -10,14 +10,18 @@ int step = 0, player = 0;
 int iswin()
 {
 	for (int i = 0; i < 3; i++)
-		if (board[i][0] && board[i][0] == board[i][1] && board[i][1] == board[i][2])
+		if (board[i][0] && board[i][0] == board[i][1]
+			&& board[i][1] == board[i][2])
 			return board[i][0];
 	for (int i = 0; i < 3; i++)
-		if (board[0][i] && board[0][i] == board[1][i] && board[1][i] == board[2][i])
+		if (board[0][i] && board[0][i] == board[1][i]
+			&& board[1][i] == board[2][i])
 			return board[0][i];
-	if (board[0][0] && board[0][0] == board[1][1] && board[1][1] == board[2][2])
+	if (board[0][0] && board[0][0] == board[1][1]
+		&& board[1][1] == board[2][2])
 		return board[0][0];
-	if (board[0][2] && board[0][2] == board[1][1] && board[1][1] == board[2][0])
+	if (board[0][2] && board[0][2] == board[1][1]
+		&& board[1][1] == board[2][0])
 		return board[0][2];
 	return 0;
 }
@@ -54,7 +58,7 @@ int think_min(int &x, int &y)
 				}
 				else
 				{
-					v = -think_max(x, y);
+					v = think_max(x, y);
 					if (best < v)
 					{
 						x = i, y = j;
@@ -195,13 +199,18 @@ int main()
 				break;
 			}
 		}
-
+		if (event.type == SDL_QUIT)
+		{
+			done = 1;
+		}
 		if (event.type == SDL_MOUSEBUTTONDOWN)
 		{
 			for (int i = 0; i < 3; i++)
 				for (int j = 0; j < 3; j++)
-					if (event.button.x > i * 200 && event.button.x < i * 200 + 190
-						&& event.button.y > j * 200 && event.button.y < j * 200 + 190)
+					if (event.button.x > i * 200
+						&& event.button.x < i * 200 + 190
+						&& event.button.y > j * 200
+						&& event.button.y < j * 200 + 190)
 					{
 						Draw_block(i * 200, j * 200, 190, 190, (SDL_Color)
 								   {

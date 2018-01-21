@@ -16,3 +16,10 @@ Click to play
 - [ ] Compile/Run on Windows
 - [ ] 显示"O"和"X"
 - [ ] 游戏结束的界面
+
+### Indent
+Formatted by GNU indent.
+
+Command:
+
+indent -bap -bli0 -i4 -l79 -ncs -npcs -npsl -fca -lc79 -fc1 -ts4
